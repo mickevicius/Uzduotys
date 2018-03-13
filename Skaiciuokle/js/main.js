@@ -17,7 +17,7 @@ var z = 0, npd = npds[0], npd2 = npds2[0], npd3 = npds3[0], zzz = zzzs[0], pk = 
 
 addEventListener("keydown", function(event) {
     if (event.keyCode == 13) {
-    z = document.getElementsByTagName('input')[0].value;
+    z = Math.abs(Number(document.getElementsByTagName('input')[0].value));
     sodrosGrindys = document.getElementsByTagName('select')[2].value;
     darbingumas = document.getElementsByTagName('select')[1].value;
     atlyginimoTipas = document.getElementsByTagName('select')[3].value;
