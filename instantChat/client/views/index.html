@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Node chat</title>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    {% if not error %}
+        <script src='/socket.io/socket.io.js'></script>
+    {% endif %}
+</head>
+<body>
+    {% if error %}
+
+        <div class="login-page">
+            <div class="form">
+                <div style="margin-top: 18px;">
+                    <form class="register" method="post" style="display: none;">
+                        <input type="text" name="username" placeholder="username"/>
+                        <input type="password" name="password" placeholder="password"/>
+                        <button type="submit">create</button>
+                        <p class="message">Already registered? <a href="#">Sign In</a></p>
+                    </form>
+                    <form class="login" method="post">
+                        <input type="text" name="username" placeholder="username"/>
+                        <input type="password" name="password" placeholder="password"/>
+                        <button type="submit">login</button>
+                        <p class="message">Not registered? <a href="#">Create an account</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="/assets/js/unauth.js"></script>
+    {% else %}
+        <div class="container clearfix">
+            <div class="chat">
+                <div class="chat-header clearfix">
+                    <div class="chat-about">
+                        <div class="chat-num-users">Hello, <span id="name">{{ username }}</span></div>
+                    </div>
+                    <div class="controls">
+                        <a href="#" class="logout-btn">Logout</a>
+                    </div>
+                </div>
+
+                <div class="chat-history">
+                    <ul>
+                    </ul>
+                </div>
+
+                <div class="chat-message clearfix">
+                    <label for="topic">Topic</label>
+                    <select class="" name="topic">
+                        <option value="task">Task</option>
+                        <option value="important">Important</option>
+                    </select>
+                    <label for="message">Message</label>
+                    <textarea name="message" placeholder ="Type your message" rows="3"></textarea>
+                    <label for="receiver">Receiver</label>
+                    <select class="allUsers" name="receiver">
+                        <option value="toAll">All</option>
+
+                    </select>
+                    <button class="send" type="submit">Send</button>
+                    <button class="reset" type="submit">Reset</button>
+                </div>
+            </div>
+        </div>
+        <script src="/assets/js/auth.js"></script>
+    {% endif %}
+</body>
+</html>
