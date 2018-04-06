@@ -170,7 +170,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
                         <td> <input type="number" name="speedoTripEnd" value="" required> </td>
                     </tr>
                 </table>
-                <button type="submit" name="button">Calculate</button>
+                <button type="submit" name="button">Pateikti</button>
             </form>
         </div>
 
@@ -251,7 +251,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
             </div>
         </div>
         <div class="row">
-        <button class="col-2 offset-3 btn btn-danger mt-3" id="filter" type="submit" name="button">Calculate</button>
+        <button class="col-2 offset-3 btn btn-danger mt-3" id="filter" type="submit" name="button">Filtruoti</button>
         </div>
         </form>
         <div class="row results mt-4">
