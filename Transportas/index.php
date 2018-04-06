@@ -239,7 +239,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
                 <h6>Data nuo</h6>
             </div>
             <div class="col-3">
-                <input type="date" name="from" value="">
+                <input type="date" name="from" value="" required>
             </div>
         </div>
         <div class="row">
@@ -247,7 +247,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
                 <h6>Data iki</h6>
             </div>
             <div class="col-3">
-                <input type="date" name="to" value="">
+                <input type="date" name="to" value="" required>
             </div>
         </div>
         <div class="row">
